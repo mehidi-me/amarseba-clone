@@ -1,0 +1,239 @@
+@font-face {
+    font-family: 'SutonnyMJ';
+    src: url('../fonts/SutonnyMJ/SutonnyMJ.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+:root {
+    --color-success: #05a34a;
+    --bg-color-success: #0f9147;
+    --bg-color-secondary: #2c3e50;
+}
+
+h1, h2, h3, h4, h5, h6, p, small, label, input, select, option, textarea, a, center, div, button, li {
+    font-family: 'SolaimanLipi', sans-serif !important;
+}
+
+.my_font {
+    font-family: 'SolaimanLipi', sans-serif !important;
+}
+
+.form-control, a, p, select, option, h6, label {
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: #29cb6f !important;
+}
+
+.select2-container--default .select2-selection--single {
+    height: 42px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    text-align: left;
+}
+
+
+.card-bg-icon {
+    position: absolute;
+    bottom: 12px;
+    right: 5%;
+    font-size: 80px;
+    opacity: 0.2;
+}
+
+/* Color Fix */
+.sidebar .sidebar-header .sidebar-brand span, .sidebar .sidebar-body .nav .nav-item.active .nav-link, .sidebar .sidebar-body .nav .nav-item.active .nav-link, .sidebar .sidebar-body .nav .nav-item.active .nav-link .link-icon {
+    color: var(--color-success);
+}
+
+/* Background Fix */
+.sidebar .sidebar-body .nav .nav-item.active .nav-link::before {
+    background: var(--bg-color-success);
+}
+
+.sidebar .sidebar-body .nav .text-capitalize.active.nav-item {
+    font-weight: bold;
+}
+
+.sidebar .sidebar-body .nav .nav-item .nav-link .link-title {
+    font-size: 1rem;
+}
+
+a {
+    color: var(--color-success);
+}
+
+.main-wrapper .page-wrapper .page-content {
+    padding: 15px;
+}
+
+.page-title h4.breadcrumb-title {
+    font-weight: bold;
+}
+
+thead tr {
+    text-align: center;
+    background-color: var(--bg-color-success);
+}
+
+th {
+    font-weight: bold !important;
+    font-size: 1rem !important;
+    color: #fff !important;
+}
+
+.bg-deep-danger {
+    background-color: #e81717;
+    color: #fff;
+}
+
+.table-image {
+    height: 50px;
+}
+
+.form-check-input:checked {
+    background-color: var(--bg-color-success);
+    border-color: var(--bg-color-success);
+}
+
+.primary-btn-bg {
+    background-color: var(--bg-color-success);
+    border-color: var(--bg-color-success);
+    color: white;
+}
+
+.header-icon {
+    font-size: 20px !important;
+    margin-top: 4px;
+}
+
+.header-notification-img {
+    height: 30px;
+    border-radius: 50%;
+    filter: brightness(1.5);
+}
+
+
+/* swal2 action */
+
+.swal2-actions button {
+    min-width: 100px;
+}
+
+.swal2-popup .swal2-title {
+    line-height: 1.2;
+}
+
+
+.card_img_box {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Recharge CSS */
+
+.recharge_card .main-tab.nav.nav-tabs .nav-item .nav-link.active {
+    background-color: #0ec95f;
+    color: white;
+    font-weight: bold !important;
+}
+
+.recharge_card .main-tab.nav.nav-tabs .nav-item .nav-link {
+    border-radius: 0px !important;
+    background-color: #fff;
+    border: 0px !important;
+    border-bottom: 2px solid #0ec95f !important;
+}
+
+
+.recharge_card .offer-section {
+    /* margin: 5px; */
+    border: 2px solid #0ec95f;
+    border-top: 0px;
+}
+
+.recharge_card .offer-tab.nav.nav-tabs.nav-tabs-line .nav-link.active {
+    border-bottom: 2px solid #0ec95f !important;
+    color: #0ec95f !important;
+    font-weight: bold !important;
+}
+
+
+
+/* ============= Loader CSS ============== */
+
+.loader_overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 10000;
+    opacity: 0.7;
+}
+
+.loader {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 10px solid #333;
+    position: relative;
+    top: 30%;
+    left: 45%;
+    animation: loader 2s linear infinite;
+}
+
+@keyframes loader {
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
+
+.loader::after {
+    content: "";
+    width: 35px;
+    height: 35px;
+    background: #333;
+    position: absolute;
+    border-radius: 50%;
+    top: -20px;
+    left: 55px;
+}
+
+.loader::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #333;
+    position: absolute;
+    transform: rotate(-90deg);
+    top: -10px;
+    left: 39px;
+}
+
+
+.swal2-confirm.btn {
+    margin: auto 10px;
+}

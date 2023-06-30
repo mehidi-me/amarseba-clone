@@ -41,11 +41,14 @@
                                             <img style="width:100px; height: 100px;" src="{{asset('admin/images/category_image/'.$category['category_image'])}}" alt="Category Image">
                                         </td>
                                         <td>{{ $category['category_style'] }}</td>
-
+{{-- cat_id --}}
                                         <td>
                                             <a href="{{ url('admin/add-edit-category/'.$category['id']) }}"><i style="font-size:30px;" class="mdi mdi-pencil-box"></i></a>
 
                                             <a href="javascript:void(0)" class="confirmDelete" module="category" moduleid="{{ $category['id'] }}"><i style="font-size:30px;" class="mdi mdi-file-excel-box"></i></a>
+                                            <a href="{{ url('admin/sheba?cat_id='.$category['id']) }}">
+                                                <div class="btn btn-primary">View Sheba</div>
+                                            </a>
                                         </td>
                                     </tr>
                                     @endforeach

@@ -24,7 +24,7 @@
         <div class="col-md-12 stretch-card">
             <section id="front-managment" class="w-100">
                 @php
-                $sheba=App\Models\Sheba::all();
+                $sheba=App\Models\Category::all();
                 @endphp
 <div class="row">
             <div class="col-md-6 col-lg-3 col-sm-6 grid-margin stretch-card">
@@ -83,7 +83,7 @@
     <div class="card position-relative border-success page_speed_1272985859">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-baseline">
-            <h6 class="card-title mb-2 text-success"><b>বর্তমান ব্যালেন্স</b> <a href="https://amarseba.net/admin/deposit" ><span class="badge bg-primary text-white">রিচার্জ</span></a></h6>
+            <a href="{{ url('dashboard/deposit') }}" ><h6 class="card-title mb-2 text-success"><b>বর্তমান ব্যালেন্স</b> <span class="badge bg-primary text-white">রিচার্জ</span></h6></a>
         </div>
         <div class="row">
         <div class="col-12">

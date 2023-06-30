@@ -13,9 +13,16 @@ class ShebaController extends Controller
     public function sheba()
     {
         Session::put('page','sheba');
-        $shebas = Sheba::all();
+        if( request()->has('cat_id') ) {
+            $shebas = Sheba::where('category_id',request()->query('cat_id'))->get();
+        }else{
+            $shebas = Sheba::all();
+        }
+      
       return view('admin.sheba.sheba',compact('shebas'));
     }
+
+  
 
     public function addEditSheba(Request $request,$id=null)
     {
@@ -91,12 +98,19 @@ class ShebaController extends Controller
 
 
 
-
+//return var_dump($data);
 
                     $sheba->sheba_name = $data['sheba_name'];
                     $sheba->shabe_version = $data['shabe_version'];
                     $sheba->category_id = $data['category_id'];
                     $sheba->sheba_price = $data['sheba_price'];
+                    if(!empty($request->cat_name)){
+                        $sheba->cat_name = $data['cat_name'];
+                    }
+                   if(!empty($request->sheba_file_link)){
+
+                       $sheba->language = $data['sheba_file_link'];
+                   }
                     $sheba->save();
                     return redirect('admin/sheba')->with('success_message',$message);
 

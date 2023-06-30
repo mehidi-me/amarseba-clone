@@ -105,22 +105,30 @@
                     <div class="form-group">
                         <label for="sheba_image">Sheba  File</label>
                         <input type="file" class="form-control" id="file" name="file">
-                        {{-- @if(!empty($sheba['sheba_image']))
-                          <a target="_blank" href="{{url('admin/images/sheba_image/'.$sheba['sheba_image'])}}">View Image</a>&nbsp;|&nbsp;
-                          <a href="javascript:void(0)" class="confirmDelete" module="sheba-image" moduleid="{{ $sheba['id'] }}">Delete Image</a>
-                        @endif --}}
+                        @if(!empty($sheba['file']))
+                          <a target="_blank" href="{{url('admin/pdf/sheba_file/'.$sheba['file'])}}">Download File</a>&nbsp;|&nbsp;
+                          {{-- <a href="javascript:void(0)" class="confirmDelete" module="sheba-image" moduleid="{{ $sheba['id'] }}">Delete File</a> --}}
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="sheba_file_link">Sheba  File Link</label>
+                        <input type="text" class="form-control" placeholder="Sheba  File Link" id="sheba_file_link" name="sheba_file_link" @if(!empty($sheba['sheba_file_link'])) value="{{$sheba['sheba_file_link']}}" @else value="{{ old('sheba_file_link') }}" @endif>
+                      
                     </div>
 
                     <div class="form-group">
                         <label for="cat_name">Cat Name</label>
-                        <input type="text" class="form-control" id="cat_name" placeholder="Enter Cat Name" name="cat_name" @if(!empty($sheba['cat_name'])) value="{{$sheba['cat_name']}}" @else value="{{ old('cat_name') }}" @endif>
+                        <select  class="form-control" value="null" name="cat_name" >
+                          <option value="null" disabled @if(!empty($sheba['cat_name']== 'null')) selected="" @endif>Select Category</option>
+                        <option value="bangla" @if(!empty($sheba['cat_name']== 'bangla')) selected="" @endif>Bangla</option>
+                        <option value="english" @if(!empty($sheba['cat_name']== 'english')) selected="" @endif>English</option>
+                        <option value="arabic" @if(!empty($sheba['cat_name']== 'arabic')) selected="" @endif>Arabic</option>
+                        </select>
+                        
                       </div>
 
 
-                      <div class="form-group">
-                        <label for="language">Language</label>
-                        <input type="text" class="form-control" id="language" placeholder="Enter Language " name="language" @if(!empty($sheba['language'])) value="{{$sheba['language']}}" @else value="{{ old('language') }}" @endif>
-                      </div>
+                      
 
 
 

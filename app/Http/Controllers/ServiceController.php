@@ -62,7 +62,12 @@ class ServiceController extends Controller
             } else if ($categories->category_style == '3') {
                 return view('user.service_list_view_3', compact('categories', 'shebas'));
             } else if ($categories->category_style == '4') {
-                return view('user.service_front', compact('categories', 'shebas'));
+                $category_name = "bangla";
+                if( request()->has('cat') ) {
+                    $category_name = request()->query('cat');
+                }
+                $shebas = Sheba::where('category_id', $categories->id)->where('cat_name',$category_name)->paginate(10);
+                return view('user.service_front', compact('categories', 'shebas','category_name','id'));
             }
 
         } else {
@@ -202,7 +207,12 @@ class ServiceController extends Controller
 
 
             // $file = 'example.pdf';
-            $pdfPath = url('admin/pdf/sheba_file/' . $sheba->file);
+            if(empty($sheba->file)){
+                $pdfPath = $sheba->language;
+            }else{
+                $pdfPath = url('admin/pdf/sheba_file/' . $sheba->file);
+            }
+           
             return response()->json([
                 "message" => 'File Downloaded!',
                 "status" => true,

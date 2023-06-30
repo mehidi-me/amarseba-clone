@@ -64,7 +64,7 @@
                 <i class="bx bx-download"></i>
             </a> --}}
 
-            <a data-bs-toggle="modal" data-bs-target="#service_modal_0{{ $key }}" >
+            <a  onclick="download_file_action('{{ url('dashboard/done/'.$sheba->id)}}',' {{ $sheba->sheba_price }}')" >
                 <i class="bx bx-download"></i>
              </a>
 
@@ -74,33 +74,7 @@
           </td>
         </tr>
 
-        <div class="modal fade" id="service_modal_0{{ $key }}">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content position-relative">
-
-                    <button type="button" class="btn-close close-icon" data-bs-dismiss="modal" aria-label="btn-close"></button>
-
-                    <div class="modal-body text-center py-4">
-                        <div class="row justify-content-center">
-                            <div class="col-md-10">
-                                <form action="{{ url('dashboard/done')}}" method="post">
-                                    @csrf
-
-                                 <input type="hidden"  name="sheba_id" value=" {{ $sheba->id }}">
-                                 <input type="hidden"  name="sheba_price" value=" {{ $sheba->sheba_price }}">
-                                 <h2>ফাইলটি ডাউনলোড করলে আপনার একাউন্ট থেকে {{ $sheba->sheba_price }}  টাকা কর্তন করা হবে। আপনি কি ডাউনলোড করবেন? </h2>
-                                <Button type="submit" class="btn btn-primary">Dawnload</Button>
-                            </form>
-                                <a  href="{{ url('dashboard/service') }}" class="btn btn-info">No</a>
-
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
        
 
         @endforeach

@@ -85,9 +85,22 @@
 
                     <div class="form-group">
                       <label for="meta_keywords"> Category Style</label>
-                      <input type="text" name="category_style" class="form-control" id="category_style" @if(!empty($category['category_style'])) value="{{$category['category_style']}}" @else value="{{ old('category_style') }}" @endif>
+                      <select name="category_style" class="form-control" id="category_style">
+                        <option value="1">Card View</option>
+                        <option value="2">List View</option>
+                        <option value="4">Font View</option>
+                        <option value="3">News View</option>
+                      </select>
                     </div>
 
+                    <div class="form-group">
+                        <label for="meta_keywords"> Category Price</label>
+                        <input type="text" name="price" placeholder=" Category Price" class="form-control" id="price" @if(!empty($category['price'])) value="{{$category['price']}}" @else value="{{ old('price') }}" @endif>
+                      </div>
+                    <div class="form-group">
+                        <label for="meta_keywords"> Category Link</label>
+                        <input type="text" name="full_link" placeholder="Category Link" class="form-control" id="full_link" @if(!empty($category['full_link'])) value="{{$category['full_link']}}" @else value="{{ old('full_link') }}" @endif>
+                      </div>
                     <div class="form-group">
                         <label for="meta_keywords"> Category Desc</label>
                         <input type="text" name="desc" class="form-control" id="desc" @if(!empty($category['desc'])) value="{{$category['desc']}}" @else value="{{ old('desc') }}" @endif>

@@ -445,14 +445,14 @@
                             <div>
                                 <input type="radio" name="paymentselctname" id="cb1" checked />
                                 <label class="paymentselctlabel" for="cb1"><img
-                                        src="{{ asset('assets/img/bkash_payment_logo.png') }}" />
+                                        src="{{ asset('admin-assets/images/bkash_payment_logo.png') }}" />
                                     <p>Bkash online payment</p>
                                 </label>
                             </div>
                             <div>
                                 <input type="radio" name="paymentselctname" id="cb2" />
                                 <label class="paymentselctlabel" for="cb2"><img
-                                        src="{{ asset('assets/img/manualpaymentimg.jpg') }}" />
+                                        src="{{ asset('admin-assets/images/manualpaymentimg.jpg') }}" />
                                     <p>Manual payment</p>
                                 </label>
                             </div>
@@ -590,7 +590,7 @@ border-width: 0.3rem;" role="status">
 
         const values = {
             full_name: "{{ auth()->user()->name }}",
-            email: "{{ auth()->user()->email }}",
+            email: "test@gmail.com",
             amount: Number($('#uddokpayAmount').val()),
             metadata: {
                 id: "{{ auth()->user()->id }}"

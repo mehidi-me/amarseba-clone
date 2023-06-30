@@ -36,6 +36,9 @@ Route::get('refund-policy', [MainController::class, 'RefundPolicy']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/user/create/file/submission', function () {
+  return  redirect('/dashboard/deposit');
+})->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
 

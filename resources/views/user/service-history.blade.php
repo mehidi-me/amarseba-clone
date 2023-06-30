@@ -63,7 +63,7 @@
                                                             <i class="bx bx-download"></i>
                                                         </a> --}}
                                             
-                                                        <a href="{{url('admin/pdf/sheba_file/' .$history->sheba[0]->file)}}" download>
+                                                        <a href="#" onclick="download_file_action('{{ url('dashboard/done/'.$history->sheba[0]->id)}}',' {{ $history->sheba[0]->sheba_price }}')">
                                                             <i class="bx bx-download"></i>
                                                          </a>
                                             

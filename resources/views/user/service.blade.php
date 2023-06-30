@@ -53,19 +53,32 @@
                                     </tr>
     </thead>
     <tbody>
-        @foreach($categories as $category)
+        @foreach($categories as $key => $category)
                    <tr class="text-center">
                             <td>
-                                {{ $category['id'] }}
+                                {{ $key + 1 }}
                             </td>
                             <td class="p-1">
                                 <img src="{{asset('admin/images/category_image/'.$category['category_image'])}}" class="table-image">
                             </td>
                             <td>
-                            <a href="{{ url('dashboard/service/detail',$category->id) }}"><b>{{ $category['category_name'] }}</b></a>
+                                @if(!empty($category->full_link))
+                                <a href="{{ $category->full_link }}" target="_blank"><b>{{ $category['category_name'] }}</b></a>
+                                @else
+                                <a href="{{ url('dashboard/service/detail',$category->id) }}"><b>{{ $category['category_name'] }}</b></a>
+                                @endif
+                           
                              </td>
                             <td>
-                                <span class='badge bg-primary text-white'><b>অনির্ধারিত</b></span>
+                                @if(!empty($category->price))
+                                {{$category->price}} টাকা
+                                @else
+                                <span class='badge bg-primary text-white'><b>
+                                    অনির্ধারিত
+                                </b></span>
+                                
+                                @endif
+                                
                             </td>
                                                         <td>
                                 আমার সেবা

@@ -70,28 +70,11 @@
 
 <input type="hidden" name="user_id" value="{{ $user->id }}">
                       <div class="form-group">
-                        <label for="amount_total">Amount Total </label>
-                        <input type="text" class="form-control" id="amount_total"  name="amount_total"  value="{{ old('balance') }}" placeholder="Amount Total" required>
+                        <label for="amount_total">Amount  </label>
+                        <input type="text" class="form-control" id="amount_total"  name="amount_total"  value="{{ old('balance') }}" placeholder="Amount " required>
                       </div>
 
-                      <div class="form-group">
-                        <label for="amount_bonus">Amount Bonus </label>
-                        <input type="text" class="form-control" id="amount_bonus"  name="amount_bonus"  value="{{ old('amount_bonus') }}" placeholder="Amount Total" placeholder="Amount Bounus" required>
-                      </div>
-
-
-                      <div class="form-group">
-                        <label for="trnsaction">Trnsaction Id </label>
-                        <input type="text" class="form-control" id="trnsaction"  name="trnsaction"  value="{{ old('trnsaction') }}" placeholder="Trnsaction Id" required>
-                      </div>
-
-
-
-
-                      <div class="form-group">
-                        <label for="image">Image </label>
-                        <input type="file" class="form-control" id="image"  name="image"  required >
-                      </div>
+                     
 
 
 

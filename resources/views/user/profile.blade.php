@@ -17,7 +17,7 @@
 <div class="">
 
 
-     <a href="http://localhost:8000/"
+     <a href="{{url('/dashboard')}}"
         class="btn btn-success btn-rounded waves-effect waves-light">
         <i class="mdi mdi-reply"></i> পেছনে যান
     </a>
@@ -72,11 +72,11 @@
             <div class="card shadow">
                 <div class="card-body">
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img src="{{asset('admin/images/user/'.Auth::user()->image)}}" height="200px" width="200px" alt="User Logo" class="rounded-circle border-success page_speed_1290887022">
+                        <img src="@if(!empty(Auth::user()->image)) {{ asset('admin/images/user/' . Auth::user()->image) }} @else {{ asset('frontend/images/user.jpeg') }} @endif" height="200px" width="200px" alt="User Logo" class="rounded-circle border-success page_speed_1290887022">
     <div class="mt-3">
                             <h4>  {{ Auth::user()->username }}</h4>
-                            <p class="text-secondary mb-1">পাবলিক</p>
-                            <p class="text-muted font-size-sm"></p>
+                            {{-- <p class="text-secondary mb-1">পাবলিক</p>
+                            <p class="text-muted font-size-sm"></p> --}}
 
                                 <a href="{{ url('user/edit/profile') }}"
                                     class="btn btn-success btn-round">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card mt-3 shadow">
+            {{-- <div class="card mt-3 shadow">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                         <h6 class="mb-0"><i class="mdi mdi-facebook text-primary"></i> ফেসবুক</h6>
@@ -102,7 +102,7 @@
                         <small class="text-secondary"><b>{{ Auth::user()->facebook }}</b></small>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
 
                 <div class="card mt-3 shadow">
                 <ul class="list-group list-group-flush">
@@ -141,7 +141,7 @@
                             {{ Auth::user()->name }}
                         </div>
                     </div>
-                    <hr>
+                    {{-- <hr>
                     <div class="row">
                         <div class="col-sm-3">
                             <h6 class="mb-0">আইডি</h6>
@@ -149,7 +149,7 @@
                         <div class="col-sm-9 text-secondary">
                             {{ Auth::user()->username }}
                         </div>
-                    </div>
+                    </div> --}}
                     <hr>
                     <div class="row">
                         <div class="col-sm-3">
@@ -159,7 +159,7 @@
                             {{ Auth::user()->number }}
                         </div>
                     </div>
-                    <hr>
+                    {{-- <hr>
                     <div class="row">
                         <div class="col-sm-3">
                             <h6 class="mb-0">ঠিকানা</h6>
@@ -188,7 +188,7 @@
                             <h6 class="mb-0">দোকান বা সেন্টারের নাম</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">{{ Auth::user()->centername }}</div>
-                    </div>
+                    </div> --}}
                     <hr>
 
 

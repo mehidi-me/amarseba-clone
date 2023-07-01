@@ -33,15 +33,18 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             // 'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'number' => ['required', 'string', 'max:255'],
-            'username' => ['required', 'string', 'max:255'],
+            'number' => ['required', 'numeric', 'digits:11', 'unique:users'],
+            //'username' => ['required', 'string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+
+      
+        
 
         $user = User::create([
             'name' => $request->name,
             // 'email' => $request->email,
-            'username' => $request->username,
+            //'username' => $request->username,
             'number' => $request->number,
             'password' => Hash::make($request->password),
         ]);
@@ -49,7 +52,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-
+      //  return redirect()->back()->with('error', 'Insufficient balance to download the PDF.');
         return redirect(RouteServiceProvider::HOME);
     }
 }

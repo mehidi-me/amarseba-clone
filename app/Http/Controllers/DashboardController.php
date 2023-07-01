@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Image;
 use Auth;
+use Validator;
 class DashboardController extends Controller
 {
     public function UserProfile()
@@ -26,17 +27,25 @@ class DashboardController extends Controller
 
     public function userProfileUpdate(Request $request)
     {
+        $validator = Validator::make($request->all(),[
+            'number' => 'required|numeric|digits:11|unique:users,number,'.Auth::id(),
+        ]);
+        if ($validator->fails()) {
+            
+           
+            return redirect()->back()->with('error',$validator->messages());
+        }
         $data = User::find(Auth::id());
         $data->name   = $request->name;
-        $data->username  = $request->username;
+       // $data->username  = $request->username;
         $data->number  = $request->number;
-        $data->address = $request->address;
-        $data->dob= $request->dob;
-        $data->nid= $request->nid;
-        $data->centername= $request->centername;
-        $data->facebook= $request->facebook;
-        $data->twitter= $request->twitter;
-        $data->whasapp= $request->whasapp;
+        // $data->address = $request->address;
+        // $data->dob= $request->dob;
+        // $data->nid= $request->nid;
+        // $data->centername= $request->centername;
+        // $data->facebook= $request->facebook;
+        // $data->twitter= $request->twitter;
+        // $data->whasapp= $request->whasapp;
 
  // Upload Image
  if ($request->hasFile('image')) {

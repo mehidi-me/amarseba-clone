@@ -29,6 +29,15 @@
 <div class="p-0 page_speed_59757184">
 <div class="row page_speed_1042574897">
 <div class="col-sm-12">
+  
+@if (\Session::has('error'))
+    <div class="alert alert-danger">
+        <ul>
+            <li>{{\Session::get('error')}}</li>
+        </ul>
+    </div>
+@endif
+
 <form enctype="multipart/form-data"
     action="{{ url('profile/update') }}"
     method="POST">
@@ -43,13 +52,13 @@
              </div>
         </div>
 
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <div class="form-group pt-1 pb-1">
                 <label for="name" class="font-black">আইডি </label>
                 <input type="text" class="form-control" name="username" id="username" placeholder="আপনার আইডি নাম লিখুন"
                     value="{{ Auth::user()->username }}" required >
              </div>
-        </div>
+        </div> --}}
         <div class="col-md-6">
             <div class="form-group py-1">
                 <label for="number" class="font-black">ফোন নাম্বার</label>
@@ -57,7 +66,7 @@
          </div>
         </div>
 
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <div class="form-group py-1">
                 <label for="dob" class="font-black">ঠিকানা</label>
                 <input type="text" class="form-control" name="address" id="address" placeholder="আপনার ঠিকানা লিখুন" value="{{ Auth::user()->address }}" required>
@@ -69,14 +78,14 @@
                 <label for="dob" class="font-black">জন্ম তারিখ</label>
                 <input type="date" class="form-control" name="dob" id="dob" placeholder="আপনার জন্ম তারিখ লিখুন" value="{{ Auth::user()->dob }}" required>
          </div>
-        </div>
+        </div> --}}
 
 
 
 
 
 
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <div class="form-group pt-1 pb-1">
                 <label for="nid" class="font-black">NID নাম্বার</label>
                 <input type="text" class="form-control" name="nid" id="nid" placeholder="আপনার NID নাম্বার লিখুন"
@@ -90,7 +99,7 @@
                 <input type="text" class="form-control" name="centername" id="centername" placeholder="দোকান বা সেন্টারের নাম লিখুন"
                     value="{{ Auth::user()->centername }}" required>
              </div>
-        </div>
+        </div> --}}
 
         <div class="col-md-6">
             <div class="form-group pt-1 pb-1">
@@ -104,7 +113,7 @@
 
 
 
-        <div class="col-12 pt-3">
+        {{-- <div class="col-12 pt-3">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group pt-1 pb-1">
@@ -128,7 +137,7 @@
                          </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 
 

@@ -107,38 +107,79 @@
             <div class="container py-2 justify-content-center  justify-content-md-between">
                 <a href="{{ url('/') }}" class="navbar-brand js-scroll-trigger"><h2 class="text-white">সব সেবা এক দরজায়</h2></a>
                 <div class="d-flex">
-                    <button class="d-none navbar-toggler text-uppercase font-weight-bold bg-success text-white rounded-1 p-0 mx-2" type="button"
-                        data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <i  data-toggle="dropdown" class="bx bx-menu p-2 dropdown-toggle page_speed_1177142743"></i>
-                        <div  id="my_menu"class="dropdown-menu col-2 page_speed_307040523">
-              <a href="{{ url('/') }}" class="page_speed_2053635372">
-                                <div class="dropdown-item text-white"><i class="fas fa-home"></i> হোম</div>
-                            </a>
-                            <a href="{{ url('about-us') }}" class="page_speed_2053635372">
-                                <div class="dropdown-item text-white"><i class="fas fa-address-card"></i> আমাদের সম্পর্কে</div>
-                            </a>
-                                                        <a href="login.html" class="page_speed_2053635372">
-                                <div class="dropdown-item text-white"><i class="fas fa-sign-in-alt"></i> লগইন</div>
-                            </a>
-                                                    </div>
-                    </button>
-                    <div class="dropdown">
-                        <button type="button" id="headerMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-success dropdown-toggle mx-2 page_speed_492876158">
-              <i class="bx bx-menu page_speed_1177142743"></i>
+                    <ul style="    list-style: none;display:flex;margin:0;">
+                        <li> <a style="    color: #fff;
+                                font-size: 16px;
+                                font-weight: bold;"
+                                href="{{ url('/') }}" class="dropdown-item">
+                                <i style="    color: #fff;
+                                font-size: 16px;
+                                font-weight: bold;"
+                                    class="bx bx-home"></i> হোম
+                            </a></li>
+                        <li> <a style="    color: #fff;
+                                font-size: 16px;
+                                font-weight: bold;"
+                                href="{{ url('about-us') }}" class="dropdown-item">
+                                <i style="    color: #fff;
+                                font-size: 16px;
+                                font-weight: bold;"
+                                    class="bx bx-id-card"></i> আমাদের সম্পর্কে
+                            </a></li>
+                        <li> <a style="    color: #fff;
+                                font-size: 16px;
+                                font-weight: bold;"
+                                href="{{ url('login') }}" class="dropdown-item">
+                                <i style="    color: #fff;
+                                font-size: 16px;
+                                font-weight: bold;"
+                                    class="bx bx-log-in"></i> লগইন
+                            </a></li>
+                        <li> <a style="    color: #fff;
+                                font-size: 16px;
+                                font-weight: bold;"
+                                href="{{ url('register') }}" class="dropdown-item">
+                                <i style="    color: #fff;
+                                font-size: 16px;
+                                font-weight: bold;"
+                                    class="bx bx-log-in"></i> রেজিষ্ট্রেশন
+                            </a></li>
+                    </ul>
+                    {{-- <form action="https://amarseba.net/">
+                            <input type="text" name="search" id="search" class="form-control rounded-1 border-0" value="" placeholder="সেবা অনুসন্ধান করুন...">
+                        </form>
+                        <button class="d-none navbar-toggler text-uppercase font-weight-bold bg-success text-white rounded-1 p-0 mx-2" type="button"
+                            data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <i  data-toggle="dropdown" class="bx bx-menu p-2 dropdown-toggle page_speed_187375549"></i>
+                            <div  id="my_menu"class="dropdown-menu col-2 page_speed_795090779">
+                            <a href="{{ url('/') }}" class="page_speed_1887010938">
+                                    <div class="dropdown-item text-white"><i class="fas fa-home"></i> হোম</div>
+                                </a>
+                                <a href="{{ url('about-us') }}" class="page_speed_1887010938">
+                                    <div class="dropdown-item text-white"><i class="fas fa-address-card"></i> আমাদের সম্পর্কে</div>
+                                </a>
+                                        <a href="{{ url('login') }}" class="page_speed_1887010938">
+                                    <div class="dropdown-item text-white"><i class="fas fa-sign-in-alt"></i> লগইন</div>
+                                </a>
+                                                        </div>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="headerMenu">
-                            <a href="{{ url('/') }}" class="dropdown-item">
-                                <i class="bx bx-home"></i> হোম
-                            </a>
-                            <a href="{{ url('about-us') }}" class="dropdown-item">
-                                <i class="bx bx-id-card"></i> আমাদের সম্পর্কে
-                            </a>
-                                                        <a href="{{ url('login') }}" class="dropdown-item">
-                                <i class="bx bx-log-in"></i> লগইন
-                            </a>
-                                                    </div>
-                    </div>
+                        <div class="dropdown">
+                            <button type="button" id="headerMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-success dropdown-toggle mx-2 page_speed_549854199">
+                            <i class="bx bx-menu page_speed_187375549"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="headerMenu">
+                                <a href="{{ url('/') }}" class="dropdown-item">
+                                    <i class="bx bx-home"></i> হোম
+                                </a>
+                                <a href="{{ url('about-us') }}" class="dropdown-item">
+                                    <i class="bx bx-id-card"></i> আমাদের সম্পর্কে
+                                </a>
+                                                            <a href="{{ url('login') }}" class="dropdown-item">
+                                    <i class="bx bx-log-in"></i> লগইন
+                                </a>
+                                                        </div>
+                        </div> --}}
                 </div>
             </div>
         </nav>

@@ -255,33 +255,18 @@ class AdminController extends Controller
         $recharge=new Recharge();
         $recharge->user_id = $request->user_id;
         $recharge->amount_total = $request->amount_total;
-        $recharge->amount_bonus = $request->amount_bonus;
-        $recharge->trnsaction = $request->trnsaction;
-        $recharge->status = 1;
-        $recharge->type = 'ব্যাংক এশিয়া';
+        $recharge->amount_bonus = $request->amount_total;
+        $recharge->status = 2;
+        $recharge->type = 'Admin';
 
 
 
 
-        if ($request->hasFile('image')) {
-           $image_tmp = $request->file('image');
-           if ($image_tmp->isValid()) {
-               // Get image extension
-               $extension = $image_tmp->getClientOriginalExtension();
-               $imageName = rand(111,999).'.'.$extension;
-               $imagePath = 'admin/images/recharge/'.$imageName;
-               // Upload the imaage
-               Image::make($image_tmp)->save($imagePath);
-               $recharge->image = $imageName;
-           }
-           else{
-              $recharge->image = "";
-           }
-       }
+       
 
        $recharge->save();
        User::where('id',Auth::id())->increment('balance', $request->amount_total);
-       $message = "Category has been deleted successfully!";
+       $message = "Balance has been update successfully!";
        return redirect()->back()->with('success_message',$message);
     }
 

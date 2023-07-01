@@ -341,14 +341,14 @@
                                     role="button" data-bs-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
                                     <img class="wd-30 ht-30 rounded-circle"
-                                        src="{{ asset('admin/images/user/' . Auth::user()->image) }}" height="50px"
+                                        src="@if(!empty(Auth::user()->image)) {{ asset('admin/images/user/' . Auth::user()->image) }} @else {{ asset('frontend/images/user.jpeg') }} @endif" height="50px"
                                         width="50px">
                                 </a>
                                 <div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
                                     <div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
                                         <div class="mb-3">
                                             <img class="wd-80 ht-80 rounded-circle"
-                                                src="{{ asset('admin/images/user/' . Auth::user()->image) }}"
+                                                src="@if(!empty(Auth::user()->image)) {{ asset('admin/images/user/' . Auth::user()->image) }} @else {{ asset('frontend/images/user.jpeg') }} @endif"
                                                 height="50px" width="50px">
                                         </div>
                                         <div class="text-center">

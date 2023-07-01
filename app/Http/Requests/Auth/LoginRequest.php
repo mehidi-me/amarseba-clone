@@ -29,7 +29,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'loginname' => ['required', 'string'],
+            'number' => ['required', 'string'],
             'password' => ['required', 'string'],
         ];
     }
@@ -51,11 +51,11 @@ class LoginRequest extends FormRequest
         //     ]);
         // }
 
-        $user=User::where('username',$this->loginname)->orwhere('name',$this->loginname)->orwhere('number',$this->loginname)->first();
+        $user=User::where('number',$this->number)->first();
         if (!$user|| !Hash::check($this->password,$user->password))
          {
             throw ValidationException::withMessages([
-                         'username' => trans('auth.failed'),
+                         'number' => trans('auth.failed'),
                      ]);
         }
 

@@ -79,8 +79,8 @@ Route::get('result/edit/{id}', [ResultController::class, 'Edit'])->name('result.
 Route::post('result/update/{id}', [ResultController::class, 'Update'])->name('result.update');
 Route::get('result/delete/{id}', [ResultController::class, 'Delete'])->name('result.delete');
 
-Route::get('payment-verify/{invoice_id}', [ServiceController::class, 'PaymentVerify'])->name('user.payment.verify');
-    Route::post('payment-verify/webhook', [ServiceController::class, 'PaymentVerifyWebhook'])->name('user.payment.verify.webhook');
+Route::get('user/payment-verify/{invoice_id}', [ServiceController::class, 'PaymentVerify'])->name('user.payment.verify');
+    Route::post('user/payment-verify/webhook', [ServiceController::class, 'PaymentVerifyWebhook'])->name('user.payment.verify.webhook');
 
     Route::post('/bkash/create-payment', [ServiceController::class, 'createPayment'])->name('bkash.create.payment');
 

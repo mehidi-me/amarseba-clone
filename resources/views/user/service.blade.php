@@ -70,18 +70,26 @@
                            
                              </td>
                             <td>
-                                @if(!empty($category->price))
-                                {{$category->price}} টাকা
-                                @else
+                                @if($category->price == 0 && $category->price != null)
+                                
+                                <span class="badge bg-success text-white"><b>ফ্রি</b></span>
+                                @elseif (empty($category->price))
                                 <span class='badge bg-primary text-white'><b>
                                     অনির্ধারিত
                                 </b></span>
+                                @else
+                                {{$category->price}} টাকা
                                 
                                 @endif
                                 
                             </td>
                                                         <td>
+                                                            @if(!empty($category->sheba_provider))
+
+                                                            {{$category->sheba_provider}}
+                                                            @else
                                 আমার সেবা
+                                @endif
                                </td>
                                     </tr>
 

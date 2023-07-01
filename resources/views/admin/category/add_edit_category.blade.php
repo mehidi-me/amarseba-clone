@@ -95,7 +95,7 @@
 
                     <div class="form-group">
                         <label for="meta_keywords"> Category Price</label>
-                        <input type="text" name="price" placeholder=" Category Price" class="form-control" id="price" @if(!empty($category['price'])) value="{{$category['price']}}" @else value="{{ old('price') }}" @endif>
+                        <input type="text" name="price" placeholder=" Category Price" class="form-control" id="price" @if(!empty($category['price']) || $category['price'] == 0) value="{{$category['price']}}" @else value="{{ old('price') }}" @endif>
                       </div>
                     <div class="form-group">
                         <label for="meta_keywords"> Category Link</label>
@@ -104,6 +104,10 @@
                     <div class="form-group">
                         <label for="meta_keywords"> Category Desc</label>
                         <input type="text" name="desc" class="form-control" id="desc" @if(!empty($category['desc'])) value="{{$category['desc']}}" @else value="{{ old('desc') }}" @endif>
+                      </div>
+                    <div class="form-group">
+                        <label for="meta_keywords"> Sheba Provider</label>
+                        <input type="text" name="sheba_provider" class="form-control" id="sheba_provider" @if(!empty($category['sheba_provider'])) value="{{$category['sheba_provider']}}" @else value="{{ old('sheba_provider') }}" @endif>
                       </div>
 
                       

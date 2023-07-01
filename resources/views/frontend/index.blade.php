@@ -23,7 +23,7 @@
                         <div class="col-md-6 col-lg-3 py-2 text-center">
                             <div class="portfolio-item mx-auto text-center" alt="{{ $category['category_name'] }}">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#service_modal_0{{ $key }}">
-                                    <img class="img-fluid service-image" src="{{asset('admin/images/category_image/'.$category['category_image'])}}" >
+                                    <img class="img-fluid service-image" style="height: 180px;    vertical-align: initial;" src="{{asset('admin/images/category_image/'.$category['category_image'])}}" >
                                     <h4 class="text-center pt-2"><b>{{ $category['category_name'] }}</b></h4>
                                 </a>
                             </div>

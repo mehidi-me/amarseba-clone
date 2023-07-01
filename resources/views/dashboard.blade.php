@@ -34,12 +34,14 @@
 
 
         <div class="card-body">
+            <a href="{{ url('dashboard/service') }}" >
             <div class="d-flex justify-content-between align-items-baseline">
-            <h6 class="card-title mb-2 text-primary"><b>মোট সেবা সংখ্যা</b></h6>
+                <h6 class="card-title mb-2 text-primary"><b>মোট সেবা সংখ্যা</b></h6> 
             </div>
+        </a>
             <div class="row">
             <div class="col-12">
-                <h3 class="mb-2">{{count($sheba)}} টি</h3>
+                <a href="{{ url('dashboard/service') }}" >  <h3 class="mb-2">{{count($sheba)}} টি</h3> </a>
             </div>
             </div>
         </div>

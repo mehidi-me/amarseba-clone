@@ -110,6 +110,8 @@ class ShebaController extends Controller
                    if(!empty($request->sheba_file_link)){
 
                        $sheba->language = $data['sheba_file_link'];
+                   }else{
+                    $sheba->language = null;
                    }
                     $sheba->save();
                     return redirect('admin/sheba')->with('success_message',$message);

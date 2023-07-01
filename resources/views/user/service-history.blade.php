@@ -52,26 +52,29 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($histories as $history)
-                                                <tr>
-                                                    <td> {{ $loop->iteration }}</td>
-                                                    <td>{{ $history->sheba[0]->sheba_name }}</td>
-                                                    <td>{{ $history->sheba[0]->sheba_price }}</td>
-                                                    <td>{{ $history->created_at }}</td>
-                                                    <td class="text-center p-2">
+                                            @if (!empty($history->sheba[0]))
+                                            <tr>
+                                                <td> {{ $loop->iteration }}</td>
+                                                <td>{{ $history->sheba[0]->sheba_name }}</td>
+                                                <td>{{ $history->sheba[0]->sheba_price }}</td>
+                                                <td>{{ $history->created_at }}</td>
+                                                <td class="text-center p-2">
 
-                                                        {{-- <a href="{{ url('dashboard/dawnload',$sheba->id) }}">
-                                                            <i class="bx bx-download"></i>
-                                                        </a> --}}
-                                            
-                                                        <a href="#" onclick="download_file_action('{{ url('dashboard/done/'.$history->sheba[0]->id)}}',' {{ $history->sheba[0]->sheba_price }}')">
-                                                            <i class="bx bx-download"></i>
-                                                         </a>
-                                            
-                                            
-                                            
-                                            
-                                                      </td>
-                                                </tr>
+                                                    {{-- <a href="{{ url('dashboard/dawnload',$sheba->id) }}">
+                                                        <i class="bx bx-download"></i>
+                                                    </a> --}}
+                                        
+                                                    <a href="#" onclick="download_file_action('{{ url('dashboard/done/'.$history->sheba[0]->id)}}',' {{ $history->sheba[0]->sheba_price }}')">
+                                                        <i class="bx bx-download"></i>
+                                                     </a>
+                                        
+                                        
+                                        
+                                        
+                                                  </td>
+                                            </tr>
+                                            @endif
+                                                
                                             @endforeach
 
                                             {{-- <tr>

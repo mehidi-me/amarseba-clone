@@ -69,9 +69,10 @@ class CategoryController extends Controller
                     $category->category_name = $data['category_name'];
                     $category->category_style = $data['category_style'];
                     $category->desc = $data['desc'];
-                    if(!empty($request->price)){
+                    $category->sheba_provider = $data['sheba_provider'];
+                   
                         $category->price = $data['price'];
-                    }
+                  
                     if(!empty($request->full_link)){
                         $category->full_link = $data['full_link'];
                     }else{

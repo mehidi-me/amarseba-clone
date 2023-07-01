@@ -74,6 +74,8 @@ class CategoryController extends Controller
                     }
                     if(!empty($request->full_link)){
                         $category->full_link = $data['full_link'];
+                    }else{
+                        $category->full_link = null;
                     }
                     $category->save();
                     return redirect('admin/categories')->with('success_message',$message);

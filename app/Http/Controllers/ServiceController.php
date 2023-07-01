@@ -182,6 +182,14 @@ class ServiceController extends Controller
         //    return response()->download(public_path('admin/pdf/sheba_file/'.$id));
     }
 
+    public function bn2en($number)
+    {
+        $bn = ["১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯", "০"];
+        $en = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+
+        return str_replace($bn, $en, $number);
+    }
+
     public function DawnloadDOne($id)
     {
 
@@ -192,18 +200,18 @@ class ServiceController extends Controller
         $balance = Auth::user()->balance;
         $sheba = Sheba::where('id', $id)->first();
 
-        if ($balance >= $sheba->sheba_price) {
+        if ($balance >= $this->bn2en($sheba->sheba_price)) {
 
 
 
             $order = new History();
             $order->sheba_id = $sheba->id;
-            $order->sheba_price = $sheba->sheba_price;
+            $order->sheba_price = $this->bn2en($sheba->sheba_price);
             $order->user_id = Auth::user()->id;
             $order->save();
             // User::where('id', $user_id)->decrement('balance', $request->sheba_price);
 
-            User::where('id', Auth::id())->decrement('balance', $sheba->sheba_price);
+            User::where('id', Auth::id())->decrement('balance', $this->bn2en($sheba->sheba_price));
 
 
             // $file = 'example.pdf';

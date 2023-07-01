@@ -82,7 +82,7 @@ class ServiceController extends Controller
     {
 
         $userId = Auth::id();
-        $histories = History::with('sheba')->where('user_id', $userId)->get();
+        $histories = History::where('user_id', $userId)->get();
         // return response()->json($histories);
         return view('user.service-history', compact('histories'));
     }

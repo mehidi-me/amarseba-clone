@@ -52,11 +52,14 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($histories as $history)
-                                            @if (!empty($history->sheba[0]))
+                                            @php
+                                            $sheba = App\Models\Sheba::find($history->sheba_id);
+                                            @endphp
+                                            @if (!empty($sheba))
                                             <tr>
                                                 <td> {{ $loop->iteration }}</td>
-                                                <td>{{ $history->sheba[0]->sheba_name }}</td>
-                                                <td>{{ $history->sheba[0]->sheba_price }}</td>
+                                                <td>{{ $sheba->sheba_name }}</td>
+                                                <td>{{ $sheba->sheba_price }}</td>
                                                 <td>{{ $history->created_at }}</td>
                                                 <td class="text-center p-2">
 
@@ -64,7 +67,7 @@
                                                         <i class="bx bx-download"></i>
                                                     </a> --}}
                                         
-                                                    <a href="#" onclick="download_file_action('{{ url('dashboard/done/'.$history->sheba[0]->id)}}',' {{ $history->sheba[0]->sheba_price }}')">
+                                                    <a href="#" onclick="download_file_action('{{ url('dashboard/done/'.$sheba->id)}}',' {{ $sheba->sheba_price }}')">
                                                         <i class="bx bx-download"></i>
                                                      </a>
                                         
